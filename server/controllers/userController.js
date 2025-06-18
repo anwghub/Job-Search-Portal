@@ -6,7 +6,7 @@ export const getUserProfile = asyncHandler(async (req, res) => {
     const { id } = req.params;
 
     // find user by auth0 id
-    const user = await User.findOne({ auth0Id: id });
+    const user = await User.findById(id);
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
