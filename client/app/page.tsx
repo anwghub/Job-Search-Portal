@@ -1,16 +1,16 @@
 "use client";
 import { useGlobalContext } from "@/context/globalContext";
 import Link from "next/link";
+import Header from "@/components/Header";
+
 
 export default function Home() {
   const {isAuthenticated} = useGlobalContext(); 
-  
+
   console.log(isAuthenticated);
   return (
-    <div>
-      <Link href="http://localhost:8000/login">
-        Login
-      </Link>
-    </div>
+    <main>
+      <Header />
+    </main>
   );
 }
